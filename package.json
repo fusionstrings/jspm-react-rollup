@@ -1,0 +1,32 @@
+{
+  "name": "jspm-react",
+  "dependencies": {},
+  "scripts": {
+    "serve": "npm run build && http-server",
+    "build-jspm": "babel app -d .tmp && jspm build ./.tmp/main.js -d dist/jspm --format system",
+    "build-rollup": "rollup -c",
+    "build": "npm run build-jspm && npm run build-rollup"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "core-js": "^3.1.4",
+    "jspm": "^2.0.0-beta.6",
+    "rollup": "^1.16.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-jspm": "^1.1.0"
+  },
+  "jspm": {
+    "dependencies": {
+      "react": "^16.8.6",
+      "react-dom": "^16.8.6"
+    },
+    "devDependencies": {
+      "@jspm/core": "^1.0.4",
+      "http-server": "~0.11.1"
+    }
+  },
+  "type": "module"
+}
